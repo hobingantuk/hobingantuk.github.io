@@ -12,13 +12,13 @@ const title = "Home";
     <h1 class="text-4xl font-bold text-white min-h-[48px]">Welcome to My Astro Site</h1>
     <p class="mt-4 text-gray-300">I build high-performance web applications.</p>
     <div class="flex flex-row justify-between gap-2 mt-4">
-    <Button client:visible variant="glass">
-        <a href="/projects" >
+    <Button client:load variant="glass">
+        <a href="/projects" aria-label="Go To Projects">
             See my projects
           </a>
       </Button>
-    <Button client:visible variant="glass">
-        <a href="/about">
+    <Button client:load variant="glass" >
+        <a href="/about" aria-label="Go To About">
             See My Personal
           </a>
       </Button>
