@@ -6,7 +6,7 @@ interface Props {
   ogImage?: string;
 }
 
-const siteName = import.meta.env.PUBLIC_SITE_NAME || "My Portfolio";
+const siteName = import.meta.env.PUBLIC_SITE_NAME || "Bagus Website";
 const defaultDesc = "Full-Stack Software Engineer specializing in Java, .NET Core, Laravel, React, and Tailwind CSS. Passionate about building scalable and efficient web applications with automation and cloud technologies.";
 const siteURL = Astro.site;
 
@@ -18,14 +18,13 @@ const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>{documentTitle}</title>
   <meta name="description" content={documentDescription} />
   <meta property="og:title" content={documentTitle} />
   <meta property="og:description" content={documentDescription} />
-  <meta property="og:image" content={ogImage} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
   <link rel="canonical" href={canonical} />
-  <link rel="icon" href="/favicon.ico" type="image/png" />
+  <link rel="icon" href="/favicon.svg?v=2" type="image/svg" />
 </head>

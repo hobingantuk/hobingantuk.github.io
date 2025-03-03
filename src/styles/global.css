@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 @layer base {
   :root {
@@ -27,6 +28,15 @@
     --chart-3: oklch(0.5 0.3 200);
     --chart-4: oklch(0.8 0.2 90);
     --chart-5: oklch(0.75 0.3 70);
+    --sidebar: oklch(0.984 0.003 247.858);
+    --sidebar-foreground: oklch(0.129 0.042 264.695);
+    --sidebar-primary: oklch(0.208 0.042 265.755);
+    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-accent: oklch(0.968 0.007 247.896);
+    --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+    --sidebar-border: oklch(0.929 0.013 255.508);
+    --sidebar-ring: oklch(0.704 0.04 256.788);
+    --font-primary: "Rubik", sans-serif;
   }
 
   .dark {
@@ -54,6 +64,14 @@
     --chart-3: oklch(0.7 0.3 50);
     --chart-4: oklch(0.6 0.3 290);
     --chart-5: oklch(0.65 0.3 350);
+    --sidebar: oklch(0.208 0.042 265.755);
+    --sidebar-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-accent: oklch(0.279 0.041 260.031);
+    --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+    --sidebar-border: oklch(0.279 0.041 260.031);
+    --sidebar-ring: oklch(0.446 0.043 257.281);
   }
 }
 
@@ -172,6 +190,14 @@
 }
 
 @layer base {
+  @font-face {
+    font-family: "Rubik";
+    src: url("fonts/Rubik-VariableFont_wght.ttf") format("truetype"),
+      url("/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
   * {
     @apply border-border outline-ring/50;
   }

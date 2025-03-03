@@ -1,13 +1,56 @@
 ---
+import { Button } from "@/components/ui/button";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Home";
-const description = "Welcome to my personal website built with Astro.";
 ---
 
-<BaseLayout title={title} description={description}>
-  <section class=" text-center mt-20 py-20">
-    <h1 class="text-4xl font-bold text-white">Welcome to My Astro Site</h1>
+<BaseLayout title={title} >
+  <!-- Matrix Effect Background -->
+  
+   <section class="relative flex flex-col items-center justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8">
+    <h1 class="text-4xl font-bold text-white min-h-[48px]">Welcome to My Astro Site</h1>
     <p class="mt-4 text-gray-300">I build high-performance web applications.</p>
+    <div class="flex flex-row justify-between gap-2 mt-4">
+    <Button client:visible variant="glass">
+        <a href="/projects" >
+            See my projects
+          </a>
+      </Button>
+    <Button client:visible variant="glass">
+        <a href="/about">
+            See My Personal
+          </a>
+      </Button>
+    </div>
+
   </section>
+  <canvas id="waves" ></canvas>
 </BaseLayout>
+
+<style>
+ $waves-opacity: 0.5;
+
+@keyframes fadeInWaves {
+  0% { opacity: 0 }
+  100% { opacity: $waves-opacity }
+}
+
+canvas#waves {
+  width: 100%;
+  height: 100vh;
+  animation: fadeInWaves 2s;
+  background: transparent;
+  opacity: $waves-opacity;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: hidden;
+  pointer-events: none;
+} 
+</style>
+
+<script hoist>
+  import "../utils/matrix.js";
+</script>

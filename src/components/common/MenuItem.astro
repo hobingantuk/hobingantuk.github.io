@@ -10,8 +10,11 @@ const isActive = pathname.replace(/\/$/, '') === link.replace(/\/$/, '');
 ---
 
 <li>
-  <a href={link} class={`relative text-lg font-medium transition group ${isActive ? "text-green-400" : "text-white hover:text-green-400"}`}>
-    {text}
-    <span class="absolute left-0 bottom-0 h-[2px] w-0 bg-green-400 transition-all duration-300 group-hover:w-full"></span>
-  </a>
-</li>
+    <a href={link} aria-label={text} 
+      class={`relative text-lg font-semibold transition group
+      ${isActive ? "text-primary before:absolute before:inset-0 before:-z-10 before:blur-[10px] before:content-[''] before:bg-primary/30" 
+                 : "text-white hover:text-primary hover:before:absolute hover:before:inset-0 hover:before:-z-10 hover:before:blur-[12px] hover:before:content-[''] hover:before:bg-primary/40"}`}>
+      {text}
+      <span class="absolute left-0 bottom-0 h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></span>
+    </a>
+  </li>

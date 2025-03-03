@@ -13,24 +13,21 @@ const navLinks = [
 <nav class="relative flex items-center">
   <!-- Mobile Menu Toggle -->
   <div class="md:hidden relative">
-    <input type="checkbox" id="menu-toggle" class="peer hidden" />
-
-    <!-- Toggle Button Wrapper -->
-      <label for="menu-toggle" class="cursor-pointer z-50 flex items-center justify-center">
-        <!-- Open Menu Icon (Hidden when menu is open) -->
-        <svg class="w-8 h-8 text-white transition-transform duration-300 peer-checked:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M3 6h18M3 12h18m-18 6h18"></path>
-        </svg>
-  
-        <!-- Close Menu Icon (Visible when menu is open) -->
-        <svg class="w-8 h-8 text-white transition-transform duration-300 hidden peer-checked:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </label>
+    <button id="menu-toggle" class="cursor-pointer flex items-center justify-center z-50">
+      <span class="sr-only">Toggle Menu</span>
+      <!-- Open Menu Icon -->
+      <svg id="menu-open-icon" class="w-8 h-8 text-white transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18m-18 6h18"></path>
+      </svg>
+      <!-- Close Menu Icon (Initially Hidden) -->
+      <svg id="menu-close-icon" class="w-8 h-8 text-white transition-transform duration-300 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
 
     <!-- Mobile Menu -->
-    <div class="fixed inset-x-0 top-[4rem] bg-[#0B1A34]/90 backdrop-blur-sm flex flex-col items-center space-y-8 py-10 text-white text-xl 
-      opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-300 z-40 w-full h-[calc(100vh-4rem)]">
+    <div id="mobile-menu" class="fixed inset-x-0 top-[4rem] bg-[#0B1A34]/30 backdrop-blur-sm flex flex-col items-center space-y-8 py-10 text-white text-xl 
+  opacity-0 invisible transition-all duration-300 z-40 w-full h-[calc(100vh-4rem)]">
       
       <ul class="flex flex-col space-y-6">
         {navLinks.map((link) => (
@@ -38,7 +35,9 @@ const navLinks = [
         ))}
         <li>
           <Button client:only="react">
-            <a href="/Bagus_CV.pdf" download>Download CV</a>
+            <a href="/Bagus_CV.pdf" download class="btn">
+                Download CV
+              </a>
           </Button>
         </li>
       </ul>
@@ -46,15 +45,41 @@ const navLinks = [
   </div>
 </nav>
 
-  <!-- Desktop Menu -->
-  <ul class="hidden md:flex items-center space-x-8">
-    {navLinks.map((link) => (
-      <MenuItem text={link.text} link={link.href} />
-    ))}
-    <li>
-      <Button client:only="react">
-        <a href="/Bagus_CV.pdf" download>Download CV</a>
-      </Button>
-    </li>
-  </ul>
-</nav>
+<!-- Desktop Menu -->
+<ul class="hidden md:flex items-center space-x-8">
+  {navLinks.map((link) => (
+    <MenuItem text={link.text} link={link.href} />
+  ))}
+  <li>
+    <Button client:visible>
+      <a href="/Bagus_CV.pdf" download>Download CV</a>
+    </Button>
+  </li>
+</ul>
+
+<!-- JavaScript -->
+<script>
+    
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuOpenIcon = document.getElementById("menu-open-icon");
+    const menuCloseIcon = document.getElementById("menu-close-icon");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.contains("opacity-100");
+
+      if (isOpen) {
+        mobileMenu.classList.remove("opacity-100", "visible");
+        mobileMenu.classList.add("opacity-0", "invisible");
+        menuOpenIcon.classList.remove("hidden");
+        menuCloseIcon.classList.add("hidden");
+      } else {
+        mobileMenu.classList.remove("opacity-0", "invisible");
+        mobileMenu.classList.add("opacity-100", "visible");
+        menuOpenIcon.classList.add("hidden");
+        menuCloseIcon.classList.remove("hidden");
+      }
+    });
+  });
+</script>
