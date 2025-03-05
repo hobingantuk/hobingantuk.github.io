@@ -33,7 +33,6 @@ export default function ContactForm() {
     register,
     handleSubmit,
     control,
-    setValue,
     formState: { errors },
   } = useForm<FormValues>();
 
@@ -59,7 +58,7 @@ export default function ContactForm() {
             <Label htmlFor="name">Name</Label>
             <Input
               id="name"
-              placeholder="John Doe"
+              placeholder="Insert your name here"
               {...register("name", { required: true })}
               className="bg-gray-800 border-gray-600 text-primary focus:border-primary focus:ring-primary"
             />
@@ -74,7 +73,7 @@ export default function ContactForm() {
             <Input
               id="email"
               type="email"
-              placeholder="johndoe@example.com"
+              placeholder="Insert your email here"
               {...register("email", { required: true })}
               className="bg-gray-800 border-gray-600 text-primary focus:border-primary focus:ring-primary"
             />
@@ -96,7 +95,7 @@ export default function ContactForm() {
                   defaultValue={field.value}
                 >
                   <SelectTrigger className="w-full bg-gray-800 border-gray-600 text-primary focus:border-primary focus:ring-primary">
-                    <SelectValue placeholder="Select an Inquiry Type" />
+                    <SelectValue placeholder="Select an Inquiry Type that suits you best" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
