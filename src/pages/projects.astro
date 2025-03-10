@@ -1,16 +1,37 @@
 ---
+import ProjectCard from "@/components/common/ProjectCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { projects } from "@/utils/projects"
 
 const title = "Projects";
 const Description ="";
+
+const processedProjects = projects.map((project, index) => ({
+  ...project,
+  loading: index < 2 ? "eager" : "lazy", // First two projects are eager, the rest are lazy
+}));
 ---
 
 <BaseLayout title={title} description={Description} >
    <section class="relative flex flex-col items-center justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8">
-    <h1 class="text-4xl font-bold text-white">This is My projects</h1>
-    <p class="mt-4 text-gray-300">penggaweanku </p>
-    <div class="flex flex-row justify-between gap-2 mt-4">
-   
+    <h1 class="text-4xl font-bold text-white">My projects</h1>
+    <div class="mt-10 flex-col">
+      {processedProjects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          year={project.year}
+          tags={project.tags}
+          repoLink={project.repoLink}
+          demoLink={project.demoLink}
+          image={project.image}
+          loading={project.loading}
+        >
+          {project.subtitle && <p slot="subtitle">{project.subtitle}</p>}
+          {project.description && <div slot="description"><p>{project.description}</p></div>}
+        </ProjectCard>
+      ))}
+    </div>
   </section>
 </BaseLayout>
 

@@ -13,7 +13,7 @@ const siteURL = Astro.site;
 const canonical = Astro.props.canonical || siteURL;
 const documentTitle = `${Astro.props.title} | ${siteName}`;
 const documentDescription = Astro.props.description || defaultDesc;
-const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
+// const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
 ---
 
 <head>
@@ -25,6 +25,7 @@ const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
   <meta property="og:description" content={documentDescription} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
+  <meta name="generator" content={Astro.generator} />
   <link rel="canonical" href={canonical} />
   <link rel="icon" href="/favicon.svg?v=2" type="image/svg" />
 </head>

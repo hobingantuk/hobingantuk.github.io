@@ -6,8 +6,6 @@ const title = "Home";
 ---
 
 <BaseLayout title={title} >
-  <!-- Matrix Effect Background -->
-  
    <section class="relative flex flex-col items-center justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8">
     <h1 class="text-4xl font-bold text-white min-h-[48px]">Welcome to My Astro Site</h1>
     <p class="mt-4 text-gray-300">I build high-performance web applications.</p>
@@ -51,6 +49,7 @@ canvas#waves {
 } 
 </style>
 
-<script hoist>
-  import "../utils/matrix.js";
+<script type="module">
+  import { setupMatrixWave } from "/src/utils/matrix.js ";
+  setupMatrixWave();
 </script>

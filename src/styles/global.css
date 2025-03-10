@@ -1,6 +1,8 @@
 @import "tailwindcss";
 /* @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"); */
 
+@custom-variant dark (&:is(.dark *));
+
 @layer base {
   :root {
     --background: oklch(1 0 0);
@@ -72,6 +74,19 @@
     --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
     --sidebar-border: oklch(0.279 0.041 260.031);
     --sidebar-ring: oklch(0.446 0.043 257.281);
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for Firefox */
+  html {
+    scrollbar-width: none;
+  }
+
+  /* Hide scrollbar for Internet Explorer */
+  body {
+    -ms-overflow-style: none;
   }
 }
 

@@ -89,59 +89,70 @@ ClassicalNoise.prototype.noise = function (x, y, z) {
 };
 
 // --- Matrix-style Perlin Wave Animation ---
-const canvas = document.getElementById("waves");
-const ctx = canvas.getContext("2d");
-const perlin = new ClassicalNoise();
+export function setupMatrixWave() {
+  if (typeof document === "undefined") return; // Ensure it runs only in the browser
 
-const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
-const spacing = 36; // Adjust spacing for readability
-const variation = 0.008;
-const waveHeight = 30;
-const speed = 0.005;
-const maxColumns = 60;
+  const canvas = document.getElementById("waves");
+  if (!canvas) return; // Prevent errors if canvas is missing
 
-let canvasWidth,
-  canvasHeight,
-  frameCount = 0;
+  const ctx = canvas.getContext("2d");
+  const perlin = new ClassicalNoise();
 
-// Get a random character from the set
-function getRandomCharacter() {
-  return characters.charAt(Math.floor(Math.random() * characters.length));
-}
+  const characters = "ꦲꦤꦕꦫꦏꦢꦠꦱꦮꦭꦥꦣꦗꦪꦚꦩꦒꦧꦛꦔ";
 
-// Draw characters in a Perlin Noise Wave Pattern
-function drawMatrixWave() {
-  ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-  ctx.font = "18px monospace";
-  ctx.fillStyle = "rgba(255, 165, 0, 0.7)"; // Subtle green effect
+  const spacing = 42;
+  const variation = 0.008;
+  const waveHeight = 30;
+  const speed = 0.0002;
+  const maxColumns = 60;
 
-  for (let i = 0; i < maxColumns; i++) {
-    for (let j = 0; j < canvasHeight / spacing; j++) {
-      let x = i * spacing;
-      let noiseFactor = perlin.noise(x * variation, frameCount * speed, 0);
-      let y = j * spacing + noiseFactor * waveHeight;
+  let canvasWidth,
+    canvasHeight,
+    frameCount = 0;
 
-      ctx.globalAlpha = 0.5 + noiseFactor * 0.5; // Fade effect
-      ctx.fillText(getRandomCharacter(), x, y);
-    }
+  function getRandomCharacter() {
+    return characters.charAt(Math.floor(Math.random() * characters.length));
   }
 
-  frameCount++;
-  requestAnimationFrame(drawMatrixWave);
+  function drawMatrixWave() {
+    ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+    ctx.font = "18px monospace";
+    ctx.fillStyle = "rgba(255, 165, 0, 0.7)";
+
+    for (let i = 0; i < maxColumns; i++) {
+      for (let j = 0; j < canvasHeight / spacing; j++) {
+        let x = i * spacing;
+        let noiseFactor = perlin.noise(x * variation, frameCount * speed, 0);
+        let y = j * spacing + noiseFactor * waveHeight;
+
+        ctx.globalAlpha = 0.5 + noiseFactor * 0.5;
+        ctx.fillText(getRandomCharacter(), x, y);
+      }
+    }
+
+    frameCount++;
+    requestAnimationFrame(drawMatrixWave);
+  }
+
+  function resizeCanvas() {
+    canvasWidth = window.innerWidth || document.documentElement.clientWidth;
+    canvasHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    canvas.setAttribute("width", canvasWidth);
+    canvas.setAttribute("height", canvasHeight);
+  }
+
+  function startAnimation() {
+    resizeCanvas();
+    drawMatrixWave();
+    window.addEventListener("resize", resizeCanvas);
+  }
+
+  startAnimation();
 }
 
-// Resize canvas dynamically
-function resizeCanvas() {
-  canvasWidth = window.innerWidth || document.documentElement.clientWidth;
-  canvasHeight = window.innerHeight || document.documentElement.clientHeight;
+// Run the function initially
+setupMatrixWave();
 
-  canvas.setAttribute("width", canvasWidth);
-  canvas.setAttribute("height", canvasHeight);
-}
-
-// Initialize animation
-(function init() {
-  resizeCanvas();
-  drawMatrixWave();
-  window.addEventListener("resize", resizeCanvas);
-})();
+// Restart animation after Astro's page transitions
+document.addEventListener("astro:page-load", setupMatrixWave);
