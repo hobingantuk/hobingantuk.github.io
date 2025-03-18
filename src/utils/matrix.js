@@ -117,7 +117,7 @@ export function setupMatrixWave() {
   function drawMatrixWave() {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight);
     ctx.font = "18px monospace";
-    ctx.fillStyle = "rgba(255, 165, 0, 0.7)";
+    ctx.fillStyle = "#b5a366";
 
     for (let i = 0; i < maxColumns; i++) {
       for (let j = 0; j < canvasHeight / spacing; j++) {

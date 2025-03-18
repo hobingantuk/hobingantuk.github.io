@@ -22,7 +22,7 @@ const props = Astro.props as ProjectCardProps;
 
 <div class="relative w-full max-w-[95%] sm:max-w-[600px] md:max-w-3xl lg:max-w-4xl flex flex-col mt-4">
   <div class="flex justify-end mr-3 mb-1">
-    <span class="text-gray-400 text-xl font-semibold tracking-wide">
+    <span class="text-gray-400 text-xl font-matisse-classic tracking-wide">
       {props.year}
     </span>
   </div>
@@ -31,15 +31,15 @@ const props = Astro.props as ProjectCardProps;
   <div class=" rounded-xl p-6 shadow-lg flex flex-col md:flex-row items-center overflow-hidden bg-[#1E293B]/50">
 
     <!-- Left Section (Text Content) -->
-    <div class="w-full md:flex-col mt-6 md:mt-0 ">
-      <h2 class="text-xl font-bold text-primary">{props.title}</h2>
+    <div class="w-full md:flex-col mt-6 md:mt-0 md:mr-20 ">
+      <h2 class="text-xl font-bold text-primary font-nis-m9">{props.title}</h2>
         <!-- Slot for subtitle -->
-        <div class="mt-2 text-gray-400 text-sm">
+        <div class="mt-2 text-gray-400 text-sm font-times-new-roman-condensed">
           <slot name="subtitle" />
         </div>
   
         <!-- Slot for description -->
-        <div class="md:mr-24 mt-3 text-gray-300">
+        <div class="md:mr-24 mt-3 text-gray-300 ont-times-new-roman-condensed">
           <slot name="description" />
         </div>
   

@@ -1,6 +1,4 @@
 @import "tailwindcss";
-/* @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"); */
-
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
@@ -11,7 +9,7 @@
     --card-foreground: oklch(0.14 0.03 100);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.14 0.03 100);
-    --primary: oklch(0.8 0.3 85);
+    --primary: #f2de9b;
     --primary-foreground: oklch(0.3 0.2 80);
     --secondary: oklch(0.95 0.02 100);
     --secondary-foreground: oklch(0.2 0.02 80);
@@ -38,7 +36,12 @@
     --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
     --sidebar-border: oklch(0.929 0.013 255.508);
     --sidebar-ring: oklch(0.704 0.04 256.788);
-    --font-primary: "Rubik", sans-serif;
+    --font-primary: "NIS JTC Win M9 Condensed", sans-serif;
+    --font-matisse-standard: "EVA Matisse Standard", sans-serif;
+    --font-matisse-classic: "EVA Matisse Classic", serif;
+    --font-nis-m9: "NIS JTC Win M9", sans-serif;
+    --font-nis-m9-condensed: "NIS JTC Win M9 Condensed", sans-serif;
+    --font-times-new-roman-condensed: "Times New Roman MT Condensed", sans-serif;
   }
 
   .dark {
@@ -205,18 +208,68 @@
 }
 
 @layer base {
-  @font-face {
-    font-family: "Rubik";
-    src: url("fonts/Rubik-VariableFont_wght.ttf") format("truetype"),
-      url("/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@font-face {
+  font-family: "EVA Matisse Standard";
+  src: url("/fonts/EVA-Matisse_Standard.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EVA Matisse Classic";
+  src: url("/fonts/EVA-Matisse_Classic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NIS JTC Win M9";
+  src: url("/fonts/NIS-JTC-Win-M9.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "NIS JTC Win M9 Condensed";
+  src: url("/fonts/NIS-JTC-Win-M9-Condensed.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Times New Roman MT Condensed Regular";
+  src: url("/fonts/TimesNewRomanMTCondensedRegular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-matisse-standard {
+  font-family: var(--font-matisse-standard);
+}
+
+.font-matisse-classic {
+  font-family: var(--font-matisse-classic);
+}
+
+.font-nis-m9 {
+  font-family: var(--font-nis-m9);
+}
+
+.font-nis-m9-condensed {
+  font-family: var(--font-nis-m9-condensed);
+}
+
+.font-times-new-roman-condensed {
+  font-family: var(--font-times-new-roman-condensed);
 }

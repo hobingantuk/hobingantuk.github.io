@@ -6,27 +6,46 @@ const title = "Home";
 ---
 
 <BaseLayout title={title} >
-   <section class="relative flex flex-col items-center justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8">
-    <h1 class="text-4xl font-bold text-white min-h-[48px]">Welcome to My Astro Site</h1>
-    <p class="mt-4 text-gray-300">I build high-performance web applications.</p>
-    <div class="flex flex-row justify-between gap-2 mt-4">
-    <Button client:load variant="glass">
-        <a href="/projects" aria-label="Go To Projects">
-            See my projects
-          </a>
-      </Button>
-    <Button client:load variant="glass" >
-        <a href="/about" aria-label="Go To About">
-            See My Personal
-          </a>
-      </Button>
-    </div>
+   <section class="relative flex flex-col items-right justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8">
+    
+    <div class="text-center md:text-right  px-4  md:pr-[4rem] lg:pr-[6rem] xl:pr-[12rem] leading-none">
+      <p class="mt-4 text-lg font-matisse-classic text-[#f2de9b]">
+        Hi, My name is
+     </p>
+      <h1 class="font-nis-m9-condensed tracking-tight inline-block melting-text">
+        <span class="block text-[4.5rem] pr-[0.5rem]">BAGUS</span>
+        <span class="block text-[5rem] pr-[0.2rem]">MAULANA</span>
+        <span class="block text-[5.5rem] md:text-[6.5rem]">NUGRAHA</span>
+      </h1>
+
+      <p class="mt-4 text-2xl font-matisse-classic text-gray-300">
+        Uni student who design & build scalable software solutions<br> 
+        and sometimes, I fight bugs that shouldn’t exist.
+     </p>
+
+      
+
+      <!-- Call-to-Action Buttons -->
+      <div class="flex flex-row justify-center md:justify-end gap-4 mt-6">
+          <Button client:load variant="default">
+              <a href="/projects" aria-label="Go To Projects">
+                  My Projects
+              </a>
+          </Button>
+          <Button client:load variant="default">
+              <a href="/about" aria-label="Go To About">
+                  About Me
+              </a>
+          </Button>
+      </div>
+  </div>
 
   </section>
   <canvas id="waves" ></canvas>
 </BaseLayout>
 
 <style>
+  
  $waves-opacity: 0.5;
 
 @keyframes fadeInWaves {
@@ -44,6 +63,7 @@ canvas#waves {
   position: absolute;
   right: 0;
   top: 0;
+  z-index: -1;
   overflow: hidden;
   pointer-events: none;
 } 

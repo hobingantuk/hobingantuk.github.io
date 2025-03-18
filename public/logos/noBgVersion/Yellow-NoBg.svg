@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="BASE" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffe100;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="cls-1" points="141.28 329.66 40.5 291.5 89.86 225.69 0 44 0 550.5 250.5 550.5 141.28 329.66"/>
+    <polygon class="cls-1" points="1080 44 990.14 225.69 1039.5 291.5 938.72 329.66 829.5 550.5 1080 550.5 1080 532.48 970.5 424.5 1080 389.58 1080 44"/>
+    <polygon class="cls-1" points="829.85 550 597 550 540 701.58 483 550 250.15 550 419.89 884.7 404.73 625.07 540 1080 675.27 625.07 660.11 884.7 829.85 550"/>
+  </g>
+  <rect class="cls-2" x="0" width="1080" height="1080" rx="167.81" ry="167.81"/>
+</svg>

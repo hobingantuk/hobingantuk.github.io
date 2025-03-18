@@ -5,17 +5,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { projects } from "@/utils/projects"
 
 const title = "Projects";
-const Description ="";
+const Description ="Discover my latest projects showcasing expertise in web development, software engineering, and UI/UX design. Explore innovative solutions and real-world applications.";
+
+const defaultLimit = 2;
 
 const processedProjects = projects.map((project, index) => ({
   ...project,
-  loading: index < 2 ? "eager" : "lazy", // First two projects are eager, the rest are lazy
+  loading: index < defaultLimit ? "eager" : "lazy", 
 }));
 ---
 
 <BaseLayout title={title} description={Description} >
    <section class="relative flex flex-col items-center justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8">
-    <h1 class="text-4xl font-bold text-white">My projects</h1>
+    <h1 class="text-4xl font-bold text-primary font-nis-m9-condensed">MY PROJECTS</h1>
     <div class="mt-10 flex-col">
       {processedProjects.map((project) => (
         <ProjectCard
@@ -36,5 +38,3 @@ const processedProjects = projects.map((project, index) => ({
 </BaseLayout>
 
 
-<script >
-</script>
