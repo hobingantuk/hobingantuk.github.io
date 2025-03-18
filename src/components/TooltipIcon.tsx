@@ -14,8 +14,7 @@ interface TooltipIconProps {
 
 export function TooltipIcon({ tag, loading }: TooltipIconProps) {
   const lowercaseTag = tag.toLowerCase();
-  const getIconPath = (tag: string) =>
-    `/src/images/Dev-Icons/${lowercaseTag}.svg`;
+  const getIconPath = (tag: string) => `/images/Dev-Icons/${lowercaseTag}.svg`;
 
   return (
     <TooltipProvider>
