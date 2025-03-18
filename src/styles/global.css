@@ -41,7 +41,8 @@
     --font-matisse-classic: "EVA Matisse Classic", serif;
     --font-nis-m9: "NIS JTC Win M9", sans-serif;
     --font-nis-m9-condensed: "NIS JTC Win M9 Condensed", sans-serif;
-    --font-times-new-roman-condensed: "Times New Roman MT Condensed", sans-serif;
+    --font-times-new-roman-mt-condensed-regular: "Times New Roman MT Condensed Regular",
+      sans-serif;
   }
 
   .dark {
@@ -270,6 +271,6 @@
   font-family: var(--font-nis-m9-condensed);
 }
 
-.font-times-new-roman-condensed {
-  font-family: var(--font-times-new-roman-condensed);
+.font-times-new-roman-mt-condensed-regular {
+  font-family: var(--font-times-new-roman-mt-condensed-regular);
 }

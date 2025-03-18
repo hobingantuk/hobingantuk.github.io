@@ -29,8 +29,8 @@ const processedProjects = projects.map((project, index) => ({
           image={project.image}
           loading={project.loading}
         >
-          {project.subtitle && <p slot="subtitle">{project.subtitle}</p>}
-          {project.description && <div slot="description"><p>{project.description}</p></div>}
+          {project.subtitle && <p slot="subtitle" class="font-times-new-roman-mt-condensed-regular">{project.subtitle}</p>}
+          {project.description && <div slot="description" class="font-times-new-roman-mt-condensed-regular"><p>{project.description}</p></div>}
         </ProjectCard>
       ))}
     </div>
