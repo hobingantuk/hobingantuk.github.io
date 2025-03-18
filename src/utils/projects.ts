@@ -1,6 +1,6 @@
-import BukuHijau from "public/images/ProjectImages/BukuHijau.png";
-import Sireklas from "public/images/ProjectImages/SIREKLAS.png";
-import Malindo from "public/images/ProjectImages/Malindo.png";
+import BukuHijau from "@/assets/images/ProjectImages/BukuHijau.png";
+import Sireklas from "@/assets/images/ProjectImages/Sireklas.png";
+import Malindo from "@/assets/images/ProjectImages/Malindo.png";
 import type { Project } from "./projectType"; // Import interface
 
 export const projects: Project[] = [
