@@ -43,6 +43,7 @@
     --font-nis-m9-condensed: "NIS JTC Win M9 Condensed", sans-serif;
     --font-times-new-roman-mt-condensed-regular: "Times New Roman MT Condensed Regular",
       sans-serif;
+    --font-times-new-roman: "Times New Roman", serif;
   }
 
   .dark {
@@ -254,6 +255,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "Times New Roman";
+  src: url("/fonts/times.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .font-matisse-standard {
   font-family: var(--font-matisse-standard);
@@ -273,4 +280,8 @@
 
 .font-times-new-roman-mt-condensed-regular {
   font-family: var(--font-times-new-roman-mt-condensed-regular);
+}
+
+.font-times-new-roman {
+  font-family: var(--font-times-new-roman);
 }
