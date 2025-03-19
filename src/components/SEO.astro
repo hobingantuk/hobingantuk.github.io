@@ -6,27 +6,60 @@ interface Props {
   ogImage?: string;
 }
 
-const siteName = import.meta.env.PUBLIC_SITE_NAME || "Bagus Website";
-const defaultDesc = "Full-Stack Software Engineer specializing in Java, .NET Core, Laravel, React, and Tailwind CSS. Passionate about building scalable and efficient web applications with automation and cloud technologies.";
-const siteURL = Astro.site;
+// Optimized for all your branding names
+const siteName = "Bagus Maulana Nugraha - Fullstack Software Engineer";
 
-const canonical = Astro.props.canonical || siteURL;
+// Stronger description that highlights your expertise + Fontys & ITS double degree
+const defaultDesc = "Final-year Software Engineering student at Fontys & ITS. Specializing in Java, .NET, Laravel, React, DevOps, and scalable web applications. Passionate about automation, software architecture, cloud technologies, and full-stack development.";
+
+// Generates dynamic canonical URLs per page for better SEO
+const siteURL = Astro.site;
+const canonical = Astro.props.canonical || `${siteURL}${Astro.url.pathname}`;
+
+// Structured title to match search engine best practices
 const documentTitle = `${Astro.props.title} | ${siteName}`;
 const documentDescription = Astro.props.description || defaultDesc;
-// const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
+
+// Ensure an OG image exists for better sharing previews
+const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
+
+// Keyword optimization for search ranking with multiple name variations
+const keywords = "Bagus Nugraha, Bagus Maulana Nugraha, hobingantuk, Software Engineer, Java, .NET, Laravel, React, Full-Stack Developer, DevOps, Fontys, ITS, Double Degree, Cloud, Automation, Software Architecture";
 ---
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Title with strong personal branding for search engines -->
   <title>{documentTitle}</title>
+
+  <!-- Essential SEO metadata -->
   <meta name="description" content={documentDescription} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Bagus Maulana Nugraha" />
+
+  <!-- Open Graph (OG) for better social media previews (Facebook, LinkedIn) -->
   <meta property="og:title" content={documentTitle} />
   <meta property="og:description" content={documentDescription} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:site_name" content={siteName} />
+
+  <!-- Twitter Card for better Twitter SEO -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={documentTitle} />
+  <meta name="twitter:description" content={documentDescription} />
+  <meta name="twitter:image" content={ogImage} />
+  <meta name="twitter:creator" content="@atleteskapisme" /> <!-- Your correct Twitter handle -->
+
   <meta name="generator" content={Astro.generator} />
+
+  <!-- Canonical URL for preventing duplicate content issues -->
   <link rel="canonical" href={canonical} />
+
+  <!-- Favicon & App Icons -->
   <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
   <link rel="shortcut icon" href="/favicon/favicon.ico" />
