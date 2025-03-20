@@ -10,13 +10,12 @@ interface Props {
 const siteName = "Bagus Maulana Nugraha - Fullstack Software Engineer";
 
 // Stronger description that highlights your expertise + Fontys & ITS double degree
-const defaultDesc = "Final-year Software Engineering student at Fontys & ITS. Specializing in Java, .NET, Laravel, React, DevOps, and scalable web applications. Passionate about automation, software architecture, cloud technologies, and full-stack development.";
+const defaultDesc = "Final-year Software Engineering student at Fontys & ITS, specializing in Java, .NET, Laravel, React, and DevOps. Passionate about cloud, automation, and scalable web apps.";
 
 // Generates dynamic canonical URLs per page for better SEO
 const siteURL = Astro.site;
 const canonical = Astro.props.canonical || `${siteURL}${Astro.url.pathname}`;
 
-// Structured title to match search engine best practices
 const documentTitle = `${Astro.props.title} | ${siteName}`;
 const documentDescription = Astro.props.description || defaultDesc;
 
@@ -25,6 +24,26 @@ const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
 
 // Keyword optimization for search ranking with multiple name variations
 const keywords = "Bagus Nugraha, Bagus Maulana Nugraha, hobingantuk, Software Engineer, Java, .NET, Laravel, React, Full-Stack Developer, DevOps, Fontys, ITS, Double Degree, Cloud, Automation, Software Architecture";
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bagus Maulana Nugraha",
+  "alternateName": ["Bagus Nugraha", "hobingantuk","Bagus"],
+  "jobTitle": ["Full-Stack Software Engineer","Backend Engineer"],
+  "url": siteURL,
+  "sameAs": [
+    "https://github.com/hobingantuk",
+    "https://linkedin.com/in/bagusnugraha",
+    "https://twitter.com/atleteskapisme",
+    "https://bmnugraha.com" // Replace with your actual website
+  ],
+  "description": documentDescription,
+  "image": ogImage,
+  "knowsAbout": [
+    "Spring Boot", ".NET Core", "Laravel", "React", "DevOps", "Cloud Computing", "Software Architecture", "Automation"
+  ]
+};
 ---
 
 <head>

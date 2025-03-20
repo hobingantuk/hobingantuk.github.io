@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://hobingantuk.github.io",
+  site: "https://bmnugraha.com",
   base: "/", // Required for root-level deployment
   output: "static",
   vite: {
