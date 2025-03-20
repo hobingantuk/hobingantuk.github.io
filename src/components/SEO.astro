@@ -10,7 +10,7 @@ interface Props {
 const siteName = "Bagus Maulana Nugraha - Fullstack Software Engineer";
 
 // Stronger description that highlights your expertise + Fontys & ITS double degree
-const defaultDesc = "Final-year Software Engineering student at Fontys & ITS, specializing in Java, .NET, Laravel, React, and DevOps. Passionate about cloud, automation, and scalable web apps.";
+const defaultDesc = "Final-year Software Engineering student at Fontys & ITS, skilled in Java, .NET, Laravel, and React. Demonstrating proficiency in modern web technologies.";
 
 // Generates dynamic canonical URLs per page for better SEO
 const siteURL = Astro.site;
@@ -85,3 +85,5 @@ const schemaData = {
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="/favicon/site.webmanifest" />
 </head>
+
+<script type="application/ld+json" set:html={JSON.stringify(schemaData)}></script>
