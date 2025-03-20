@@ -220,7 +220,7 @@
 
 @font-face {
   font-family: "EVA Matisse Standard";
-  src: url("/fonts/EVA-Matisse_Standard.ttf") format("truetype");
+  src: url("/fonts/EVA-Matisse_Standard.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -228,7 +228,7 @@
 
 @font-face {
   font-family: "EVA Matisse Classic";
-  src: url("/fonts/EVA-Matisse_Classic.ttf") format("truetype");
+  src: url("/fonts/EVA-Matisse_Classic.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -236,7 +236,7 @@
 
 @font-face {
   font-family: "NIS JTC Win M9";
-  src: url("/fonts/NIS-JTC-Win-M9.ttf") format("truetype");
+  src: url("/fonts/NIS-JTC-Win-M9.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -244,22 +244,18 @@
 
 @font-face {
   font-family: "NIS JTC Win M9 Condensed";
-  src: url("/fonts/NIS-JTC-Win-M9-Condensed.ttf") format("truetype");
+  src: url("/fonts/NIS-JTC-Win-M9-Condensed.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Times New Roman MT Condensed Regular";
-  src: url("/fonts/TimesNewRomanMTCondensedRegular.otf") format("opentype");
+  src: url("/fonts/TimesNewRomanMTCondensedRegular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-}
-@font-face {
-  font-family: "Times New Roman";
-  src: url("/fonts/times.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  font-display: swap;
 }
 
 .font-matisse-standard {
