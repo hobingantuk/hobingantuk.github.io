@@ -15,5 +15,12 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      changefreq: "weekly",
+      lastmod: new Date(),
+      priority: 0.7,
+    }),
+  ],
 });
