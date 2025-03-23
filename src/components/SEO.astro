@@ -23,13 +23,13 @@ const documentDescription = Astro.props.description || defaultDesc;
 const ogImage = Astro.props.ogImage || `${siteURL}/images/ogimage.png`;
 
 // Keyword optimization for search ranking with multiple name variations
-const keywords = "Bagus Nugraha, Bagus Maulana Nugraha, hobingantuk, Software Engineer, Java, .NET, Laravel, React, Full-Stack Developer, DevOps, Fontys, ITS, Double Degree, Cloud, Automation, Software Architecture";
+const keywords = "Bagus Nugraha,bmnugraha, Bagus Maulana Nugraha, hobingantuk, Software Engineer, Java, .NET, Laravel, React, Full-Stack Developer, DevOps, Fontys, ITS, Double Degree, Cloud, Automation, Software Architecture";
 
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Bagus Maulana Nugraha",
-  "alternateName": ["Bagus Nugraha", "hobingantuk","Bagus"],
+  "alternateName": ["Bagus Nugraha", "hobingantuk","Bagus","bmnugraha","bnugraha"],
   "jobTitle": ["Full-Stack Software Engineer","Backend Engineer"],
   "url": siteURL,
   "sameAs": [
@@ -80,6 +80,7 @@ const schemaData = {
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
 
   <!-- Favicon & App Icons -->
+  <link rel="icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
   <link rel="shortcut icon" href="/favicon/favicon.ico" />

@@ -151,8 +151,5 @@ export function setupMatrixWave() {
   startAnimation();
 }
 
-// Run the function initially
-setupMatrixWave();
-
 // Restart animation after Astro's page transitions
 document.addEventListener("astro:page-load", setupMatrixWave);
