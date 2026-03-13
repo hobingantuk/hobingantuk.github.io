@@ -10,7 +10,7 @@ const title = "Home";
         class="relative flex flex-col items-right justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8"
     >
         <div
-            class="text-center md:text-right px-4 md:pr-[4rem] lg:pr-[6rem] xl:pr-[12rem] leading-none"
+            class="w-full md:max-w-[52rem] md:ml-auto text-center md:text-right px-4 md:pr-[4rem] lg:pr-[6rem] xl:pr-[12rem] leading-none"
         >
             <p class="mt-4 text-lg font-matisse-classic text-[#f2de9b]">
                 Hi, My name is
@@ -28,7 +28,7 @@ const title = "Home";
             </h1>
 
             <h2
-                class="mt-4 text-base md:text-2xl font-matisse-classic text-gray-300"
+                class="mt-4 text-base md:text-2xl font-matisse-classic text-gray-300 max-w-[72ch] mx-auto md:mx-0 md:ml-auto md:max-w-[36ch]"
             >
                 Recent Software Engineering graduate focused on full-stack
                 development, with strong interest in backend systems, DevOps,
@@ -81,5 +81,16 @@ const title = "Home";
 
 <script hoist>
     import { setupMatrixWave } from "../utils/matrix.js";
-    setupMatrixWave();
+
+    const startMatrixWave = () => {
+        if (document.getElementById("waves")) {
+            setupMatrixWave();
+        }
+    };
+
+    if (typeof window !== "undefined" && "requestIdleCallback" in window) {
+        window.requestIdleCallback(startMatrixWave, { timeout: 1200 });
+    } else {
+        setTimeout(startMatrixWave, 300);
+    }
 </script>
