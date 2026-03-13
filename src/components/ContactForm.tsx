@@ -40,7 +40,7 @@ export default function ContactForm() {
     const { name, email, inquiryType, message } = data;
     const emailBody = generateEmailContent(name, email, inquiryType, message);
     const mailtoLink = `mailto:bagusnugrahaxd@gmail.com?subject=${encodeURIComponent(
-      `New ${inquiryType} from ${name}`
+      `New ${inquiryType} from ${name}`,
     )}&body=${encodeURIComponent(emailBody)}`;
     window.location.href = mailtoLink;
   };
@@ -56,9 +56,8 @@ export default function ContactForm() {
           GET IN TOUCH
         </h2>
         <p className="text-muted-primary font-matisse-standard max-w-md mx-auto mt-2">
-          Hit that send button and—BOOM!—your default email app will pop open
-          like magic 🎩✨. Pre-filled subject and message included. Because who
-          has time to type everything?
+          Hit that send button and your default email app will pop open .
+          Pre-filled subject and message included. Because why not?
         </p>
       </div>
 
@@ -71,7 +70,7 @@ export default function ContactForm() {
               <Label htmlFor="name">Name</Label>
               <Input
                 id="name"
-                placeholder="👀 Your Name Here"
+                placeholder="Your Name Here"
                 {...register("name", { required: true })}
                 className="bg-gray-900 border-gray-700 text-primary focus:border-primary focus:ring-primary focus:ring-2 transition-all duration-200"
               />
@@ -122,6 +121,7 @@ export default function ContactForm() {
                           🤝 Collaboration
                         </SelectItem>
                         <SelectItem value="Support">🛠️ Support</SelectItem>
+                        <SelectItem value="Inquiry">❓ Inquiry</SelectItem>
                         <SelectItem value="Other">🤷 Other</SelectItem>
                       </SelectGroup>
                     </SelectContent>

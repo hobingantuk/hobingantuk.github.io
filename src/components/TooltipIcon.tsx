@@ -9,7 +9,7 @@ import {
 
 interface TooltipIconProps {
   tag: string;
-  loading?: "eager" | "lazy"; // ✅ Added dynamic loading prop
+  loading?: "eager" | "lazy";
 }
 
 export function TooltipIcon({ tag, loading }: TooltipIconProps) {
