@@ -2,75 +2,84 @@
 import { Button } from "@/components/ui/button";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-
 const title = "Home";
 ---
 
-<BaseLayout title={title} >
-   <section class="relative flex flex-col items-right justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8">
-    
-    <div class="text-center md:text-right  px-4  md:pr-[4rem] lg:pr-[6rem] xl:pr-[12rem] leading-none">
-      <p class="mt-4 text-lg font-matisse-classic text-[#f2de9b]">
-        Hi, My name is
-     </p>
-      <h1 class="font-nis-m9-condensed tracking-tight inline-block melting-text">
-        <span class="block text-[3.5rem] md:text-[4.5rem] pr-[0.5rem]">BAGUS</span>
-        <span class="block text-[4rem] md:text-[5rem] pr-[0.2rem]">MAULANA</span>
-        <span class="block text-[5rem] md:text-[6rem]">NUGRAHA</span>
-      </h1>
+<BaseLayout title={title}>
+    <section
+        class="relative flex flex-col items-right justify-center min-h-[calc(100vh-12rem)] md:min-h-[calc(100vh-9.8rem)] px-6 py-8"
+    >
+        <div
+            class="text-center md:text-right px-4 md:pr-[4rem] lg:pr-[6rem] xl:pr-[12rem] leading-none"
+        >
+            <p class="mt-4 text-lg font-matisse-classic text-[#f2de9b]">
+                Hi, My name is
+            </p>
+            <h1
+                class="font-nis-m9-condensed tracking-tight inline-block melting-text"
+            >
+                <span class="block text-[3.5rem] md:text-[4.5rem] pr-[0.5rem]"
+                    >BAGUS</span
+                >
+                <span class="block text-[4rem] md:text-[5rem] pr-[0.2rem]"
+                    >MAULANA</span
+                >
+                <span class="block text-[5rem] md:text-[6rem]">NUGRAHA</span>
+            </h1>
 
-      <h2 class="mt-4 text-base md:text-2xl font-matisse-classic text-gray-300">
-        Uni student who design & build scalable software solutions<br> 
-        and sometimes, I fight bugs that shouldn’t exist.
-     </h2>
+            <h2
+                class="mt-4 text-base md:text-2xl font-matisse-classic text-gray-300"
+            >
+                Recent Software Engineering graduate focused on full-stack
+                development, with strong interest in backend systems, DevOps,
+                and cloud infrastructure.
+            </h2>
 
-      
-
-      <!-- Call-to-Action Buttons -->
-      <div class="flex flex-row justify-center md:justify-end gap-4 mt-6">
-          <Button client:load variant="default">
-              <a href="/projects" aria-label="Go To Projects">
-                  My Projects
-              </a>
-          </Button>
-          <Button client:load variant="default">
-              <a href="/about" aria-label="Go To About">
-                  About Me
-              </a>
-          </Button>
-      </div>
-  </div>
-
-  </section>
-  <canvas id="waves" ></canvas>
+            <!-- Call-to-Action Buttons -->
+            <div class="flex flex-row justify-center md:justify-end gap-4 mt-6">
+                <Button client:load variant="default">
+                    <a href="/projects" aria-label="Go To Projects">
+                        My Projects
+                    </a>
+                </Button>
+                <Button client:load variant="default">
+                    <a href="/about" aria-label="Go To About"> About Me </a>
+                </Button>
+            </div>
+        </div>
+    </section>
+    <canvas id="waves"></canvas>
 </BaseLayout>
 
 <style>
-  
- $waves-opacity: 0.5;
+    $waves-opacity: 0.5;
 
-@keyframes fadeInWaves {
-  0% { opacity: 0 }
-  100% { opacity: $waves-opacity }
-}
+    @keyframes fadeInWaves {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: $waves-opacity;
+        }
+    }
 
-canvas#waves {
-  width: 100%;
-  height: 100vh;
-  animation: fadeInWaves 2s;
-  background: transparent;
-  opacity: $waves-opacity;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: -1;
-  overflow: hidden;
-  pointer-events: none;
-} 
+    canvas#waves {
+        width: 100%;
+        height: 100vh;
+        animation: fadeInWaves 2s;
+        background: transparent;
+        opacity: $waves-opacity;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
 </style>
 
 <script hoist>
-  import { setupMatrixWave } from "../utils/matrix.js";
-  setupMatrixWave();
+    import { setupMatrixWave } from "../utils/matrix.js";
+    setupMatrixWave();
 </script>
