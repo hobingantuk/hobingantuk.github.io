@@ -1,0 +1,28 @@
+---
+import CoffeePlanner from "@/features/coffee/components/CoffeePlanner";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const title = "Coffee Brew Planner";
+const description =
+  "A client-side coffee brew planner with a Tetsu Kasuya 4:6 calculator and coffee bag dose planner.";
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="relative min-h-[calc(100vh-12rem)] px-6 py-8 md:min-h-[calc(100vh-9.8rem)]">
+    <div class="mx-auto mb-8 max-w-6xl">
+      <p class="font-matisse-classic text-lg text-[#f2de9b]">Stuffs</p>
+      <h1 class="mt-2 font-nis-m9-condensed text-5xl leading-none text-primary md:text-6xl">
+        COFFEE BREW PLANNER
+      </h1>
+      <p class="mt-4 max-w-6xl font-times-new-roman text-base text-gray-300 md:text-lg">
+        I am in my homebrewer era at the moment, so this is one of my stuffs: a small tool I made
+        for daily use because the coffee calculators I found online did not quite fit how I brew.
+        It helps me plan what is left in the bag, pick a practical dose, and generate a Tetsu
+        Kasuya 4:6 recipe without overthinking the math. Mostly for me, but maybe useful if you
+        happen to need the same thing.
+      </p>
+    </div>
+
+    <CoffeePlanner client:idle />
+  </section>
+</BaseLayout>
